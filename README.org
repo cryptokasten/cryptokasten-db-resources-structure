@@ -1,0 +1,35 @@
+#+TITLE: Cryptokasten DB: Resources structure
+#+TAGS: cryptokasten, cryptokasten-db, second-brain
+#+OPTIONS: ^:nil
+
+[[https://github.com/cryptokasten][file:https://img.shields.io/badge/dynamic/json.svg?url=https://api.github.com/users/cryptokasten&label=Cryptokasten&query=$.public_repos]]
+
+| Name              | Type                 | Description                                 |
+|-------------------+----------------------+---------------------------------------------|
+| *Name*            | Name                 | Наименование ресурса                        |
+| *ID*              | Number               | Идентификатор                               |
+| *Type*            | Select               | Тип                                         |
+| *Status*          | Select               | Статус ([[https://github.com/cryptokasten/cryptokasten-db-resources-workflow][Resources workflow]])                 |
+| *Tags*            | Multi-select         | Список тегов                                |
+| *Authors*         | Relation [People]    | Авторы (участники)                          |
+| *Author Company*  | Relation [Companies] | Компания-автор, организатор                 |
+| *Year*            | Number               | Год издания/выпуска                         |
+| *URL*             | URL                  | Ссылка на ресурс                            |
+| *ISBN/DOI*        | Text                 | ISBN/DOI                                    |
+| *Издательство*    | Relation [Companies] | Издательство                                |
+| *References*      | Relation [Resources] | Ресурсы, на которые ссылается данный ресурс |
+| *Cited in*        | Relation [Resources] | Ресурсы, которые ссылаются на данный ресурс |
+| *Concepts*        | Relation [Concepts]  | Связанные концепты                          |
+| *Notes*           | Relation [Notes]     | Связанные заметки                           |
+| *Tools*           | Relation [Tools]     | Связанные инструменты                       |
+| *Actions*         | Relation [Actions]   | Связанные действия                          |
+| *Contains*        | Relation [Resources] | Дочерние ресурсы                            |
+| *Is part of*      | Relation [Resources] | Родительский ресурс                         |
+| *Cited companies* | Relation [Companies] | Связанные компании                          |
+| *Cited peoples*   | Relation [Peoples]   | Связанные люди                              |
+| *Hardware*        | Relation [Hardware]  | Связанное оборудование                      |
+| *Backup link*     | URL                  | Ссылка на скачивание в моем хранилище       |
+| *Download link*   | URL                  | Внешняя ссылка                              |
+| *Создано*         | Created time         | Время создания                              |
+| *Отредактировано* | Last edited time     | Время последнего редактирования             |
+
